@@ -29,8 +29,8 @@ export const SlidesShow = ({ images, title, className }: Props) => {
         thumbs={{ 
           swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null          
         }}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
+        // onSlideChange={() => console.log('slide change')}
+        // onSwiper={(swiper) => console.log(swiper)}
         className='mySwiper2'
       >
         {
