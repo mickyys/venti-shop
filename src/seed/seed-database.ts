@@ -7,16 +7,18 @@ async function main() {
     await Promise.all([
         prisma.productImage.deleteMany(),
         prisma.product.deleteMany(),
-        prisma.category.deleteMany()
+        prisma.category.deleteMany(),
+        prisma.user.deleteMany()
     ]);
 
-    const { categories, products } = initialData;
+    const { categories, products, users } = initialData;
     const categoriesData = categories.map((name) => ({ name }));
 
     await Promise.all([
         prisma.category.createMany({
             data: categoriesData
-        })
+        }),
+        prisma.user.createMany({ data: users })
     ]);
 
     const categoriesDB = await prisma.category.findMany();
@@ -42,6 +44,8 @@ async function main() {
             }))
         })
     })
+
+    
 
 
     console.log('Seed ejecutado correctamente');
