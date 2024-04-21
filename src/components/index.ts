@@ -10,4 +10,7 @@ export * from './product/slides-show/SlidesShow';
 export * from './ui/footer/Footer';
 export * from './ui/pagination/Pagination';
 export * from './product/stock-label/StockLabel';
-export * from './provider/Provider';
+export * from './provider/Providers';
+export * from './ui/checkbox/Checkbox';
+export * from './paypal/PayPalButton';
+export * from './orders/OrderStatus';

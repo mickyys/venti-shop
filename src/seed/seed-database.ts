@@ -1,24 +1,28 @@
 import prisma from '../lib/prisma';
-import { initialData } from './seed';
+import { countries, initialData } from './seed';
 
 
 async function main() {
 
-    await Promise.all([
-        prisma.productImage.deleteMany(),
-        prisma.product.deleteMany(),
-        prisma.category.deleteMany(),
-        prisma.user.deleteMany()
-    ]);
+    // await Promise.all([
+       await prisma.orderAddress.deleteMany(),
+       await prisma.orderItem.deleteMany(),
+       await prisma.order.deleteMany(),
+       await prisma.userAddress.deleteMany(),
+       await prisma.productImage.deleteMany(),
+       await prisma.product.deleteMany(),
+       await prisma.category.deleteMany(),
+       await prisma.user.deleteMany(),
+       await prisma.country.deleteMany()
+    // ]);
 
     const { categories, products, users } = initialData;
     const categoriesData = categories.map((name) => ({ name }));
 
     await Promise.all([
-        prisma.category.createMany({
-            data: categoriesData
-        }),
-        prisma.user.createMany({ data: users })
+        prisma.category.createMany({ data: categoriesData }),
+        prisma.user.createMany({ data: users }),
+        prisma.country.createMany({ data: countries})
     ]);
 
     const categoriesDB = await prisma.category.findMany();
