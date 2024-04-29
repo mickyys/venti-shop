@@ -14,15 +14,16 @@ export const StockLabel = ({ slug }: Props) => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
+        const getStocks = async () => {
+            const stockSlug = await getStockBySlug(slug);
+            setStock(stockSlug);
+            setIsLoading(false);
+        }
         getStocks();
-    }, [])
+    }, [slug])
 
 
-    const getStocks = async () => {
-        const stockSlug = await getStockBySlug(slug);
-        setStock(stockSlug);
-        setIsLoading(false);
-    }
+    
     return (
         <>
             {isLoading ?

@@ -13,3 +13,9 @@ export * from './order/get-order-by-id';
 export * from './order/get-orders-by-user';
 export * from './order/set-order-transaction';
 export * from './payments/paypal-check-payment';
+export * from './order/get-paginated-orders'
+export * from './user/get-users';
+export * from './user/set-user-role';
+export * from './category/get-categories';
+export * from './products/create-update-product';
+export * from './products/delete-product-image';

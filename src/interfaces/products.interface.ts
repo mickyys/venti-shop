@@ -10,6 +10,13 @@ export interface Product {
     title: string;
     // type: ValidTypes;
     gender: ValidGenders;
+    categoryId: string;
+}
+
+export interface ProductImage {
+    id: number;
+    url: string;
+    productId: string;
 }
 
 export interface CartProduct {
@@ -22,6 +29,6 @@ export interface CartProduct {
     images: string;
 }
 
-export type ValidGenders = 'men'|'women'|'kid'|'unisex';
-export type ValidSizes = 'XS'|'S'|'M'|'L'|'XL'|'XXL'|'XXXL';
-export type ValidTypes = 'shirts'|'pants'|'hoodies'|'hats';
+export type ValidGenders = 'men' | 'women' | 'kid' | 'unisex';
+export type ValidSizes = 'XS' | 'S' | 'M' | 'L' | 'XL' | 'XXL' | 'XXXL';
+export type ValidTypes = 'shirts' | 'pants' | 'hoodies' | 'hats';

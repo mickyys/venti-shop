@@ -25,7 +25,7 @@ interface FormInputs {
 
 interface Props {
     countries: Country[],
-    userStoreAddress? : Partial<Address>
+    userStoreAddress?: Partial<Address>
 }
 
 export const AddressForm = ({ countries, userStoreAddress = {} }: Props) => {
@@ -41,7 +41,7 @@ export const AddressForm = ({ countries, userStoreAddress = {} }: Props) => {
     })
     useEffect(() => {
         reset(address);
-    }, [address])
+    }, [address, reset])
 
 
     const onSubmit = async (data: FormInputs) => {
@@ -53,7 +53,7 @@ export const AddressForm = ({ countries, userStoreAddress = {} }: Props) => {
         if (data.rememberAddress) {
             console.log("session!.user.id", session!.user.id);
             await setUserAddress(restAddress, session!.user.id)
-        }else{
+        } else {
             await removeAddress(session!.user.id);
         }
 
