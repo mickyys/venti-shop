@@ -76,13 +76,7 @@ export default async function AdminOrderPage() {
 
                 </tr>
               )
-
-
             })}
-
-
-
-
           </tbody>
         </table>
       </div>

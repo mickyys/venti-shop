@@ -6,6 +6,7 @@ import Image from "next/image";
 import { IoCardOutline } from "react-icons/io5";
 import { currencyFormat } from '../../../../utils/currencyFormat';
 import { redirect } from "next/navigation";
+import { VentiPayButton } from "@/components/ventipay/VentiPayButton";
 
 interface Props {
   params: { id: string; }
@@ -92,7 +93,10 @@ export default async function OrderPage({ params }: Props) {
                   isPaid? (
                     <OrderStatus isPaid={isPaid} />
                   ) : (
-                    <PayPalButton amount={order!.total} orderId={order!.id} />
+                    <>
+                    <VentiPayButton amount={order!.total} orderId={order!.id} />
+                    <PayPalButton amount={order!.total} orderId={order!.id} />                    
+                    </>
                   )
                 }
               </div>

@@ -29,7 +29,6 @@ export const authConfig: NextAuthConfig = {
       return session;
     },
     authorized({ auth, request: { nextUrl } }) {
-      console.log('Authent', auth, nextUrl.pathname);
       const isLoggedIn = !!auth?.user;
       const isOnDashboard = autenticatedRoutes.includes(nextUrl.pathname);
       if (isOnDashboard) {
@@ -57,7 +56,6 @@ export const authConfig: NextAuthConfig = {
           if(!isValidPassword) return null;
 
           const { password: _, ...rest } = user;
-          console.log("authorize....", rest);
           
           return rest;
         }
@@ -69,13 +67,10 @@ export const authConfig: NextAuthConfig = {
 };
 
 async function getUserByEmail(email: string) {
-  console.log("getUserByEmail", email);
   const user = await prisma.user.findFirst({ where: { email: email.toLowerCase() } })
   if (!user) {
-    console.log("getUserByEmail nuull *******");
     return null;
   }
-  console.log("getUserByEmail user", user);
   return user;
 }
   
