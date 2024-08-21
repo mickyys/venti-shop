@@ -44,3 +44,21 @@ npm run dev
 | user@asd.cl   |  123456  |  User |
 
 
+Evidencia
+
+- Confirmación compra
+![Confirmación compra](/public/venti/01.png)
+- Dirección entrega
+![Dirección entrega](/public/venti/02.png)
+- Verificación orden
+![Verificación orden](/public/venti/03.png)
+- Pagar orden
+![Pagar orden](/public/venti/04.png)
+- Pagar en Venti
+![Pagar](/public/venti/05.png)
+- Pago exitoso
+![pago exitoso](/public/venti/06.png)
+- Orden pagada y confirmada
+![Orden pagada y confirmada](/public/venti/07.png)
+- Orden pagada en portal de administración
+![Orden pagada en portal de administración](/public/venti/08.png)
