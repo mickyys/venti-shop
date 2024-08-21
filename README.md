@@ -44,7 +44,7 @@ npm run dev
 | user@asd.cl   |  123456  |  User |
 
 
-Evidencia
+## Evidencia
 
 - Confirmación compra
 ![Confirmación compra](/public/venti/01.png)
